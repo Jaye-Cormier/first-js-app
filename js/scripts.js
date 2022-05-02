@@ -160,33 +160,7 @@ let pokemonList = [
 
 
 
-// let text = "";
-// let i = 0;
-// for(;pokemonList[i];){
-//  if (pokemonList[i].height > 2.0) {
-//  text = text + " " + pokemonList[i].name + " height " + pokemonList[i].height + "m." + "  Wow, " + pokemonList[i].name + " is really big!" + '<br/>';
-//  i++;
-//  }
-//  else
-//  {
-//    text = text + " " + pokemonList[i].name + " height " + pokemonList[i].height + "m" + '<br/>';
-//  i++;
-//  }
-// }
-// document.write(text);
-
-// for (let i = 0; i < pokemonList.length; i++){
-//  if (pokemonList[i].height > 2.0) {
-//  document.write(pokemonList[i].name + ", height: " + pokemonList[i].height + "m." + " Wow, this pokemon is huge!" + '<br/>');
-//  }
-//  else {
-//    document.write(pokemonList[i].name + ", height: " + pokemonList[i].height + "m." + '<br/>');
-//  }
-//}
- // this function will call the pokemonList Array and display it's objects and their arrays
-function displayPokemonArray(list) {
-  for (let i = 0; i < list.length; i++){
-    document.write('<p>' + list[i].name + '<br/>' + " height: " + list[i].height + "m" + '<br/>' + "type(s): " + list[i].types.join(", ") + '<br/>' + "weak to: " + list[i].typeWeakness.join(", ") + '<p/>');
-  }
- }
-displayPokemonArray(pokemonList);
+function runPokemonList(pokemon) {
+  document.write('<p>' + pokemon.name + '<br/>' + " height: " + pokemon.height + "m" + '<br/>' + "type(s): " + pokemon.types.join(", ") + '<br/>' + "weak to: " + pokemon.typeWeakness.join(", ") + '<p/>');
+}
+pokemonList.forEach(runPokemonList);
