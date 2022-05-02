@@ -1,4 +1,6 @@
 // List of Kanto region pokemon
+let pokemonRepository = (function() {
+  
 let pokemonList = [
   {
     name: "bulbasaur",
@@ -160,7 +162,31 @@ let pokemonList = [
 
 
 
+function getAll(){
+  return pokemonList;
+}
+
+  function add (pokemon){
+    pokemonList.push(pokemon);
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  }
+  })()
+
+console.log(pokemonRepository.getAll())
+pokemonRepository.add({
+  name: "eevee",
+  height: 0.3 ,
+  types: ["normal"],
+  typeWeakness: ["fighting"]
+})
+
+
+
 function runPokemonList(pokemon) {
   document.write('<p>' + pokemon.name + '<br/>' + " height: " + pokemon.height + "m" + '<br/>' + "type(s): " + pokemon.types.join(", ") + '<br/>' + "weak to: " + pokemon.typeWeakness.join(", ") + '<p/>');
 }
-pokemonList.forEach(runPokemonList);
+pokemonRepository.getAll().forEach(runPokemonList);
