@@ -1,4 +1,4 @@
-// List of Kanto region pokemon and some of their attributes
+// List of Kanto region pokemon
 let pokemonList = [
   {
     name: "bulbasaur",
@@ -73,6 +73,66 @@ let pokemonList = [
     typeWeakness: ["electric", "fire", "flying", "ice", "rock"]
   },
   {
+    name: "weedle",
+    height: 0.3,
+    types: ["bug", "poison"],
+    typeWeakness: ["fire", "flying", "psychic", "rock"]
+  },
+  {
+    name: "kakuna",
+    height: 0.6,
+    types: ["bug", "poison"],
+    typeWeakness: ["fire", "flying", "psychic", "rock"]
+  },
+  {
+    name: "beedrill",
+    height: 1.0,
+    types: ["bug", "poison"],
+    typeWeakness: ["fire", "flying", "psychic", "rock"]
+  },
+  {
+    name: "pidgey",
+    height: 0.3,
+    types: ["flying", "normal"],
+    typeWeakness: ["electric", "ice", "rock"]
+  },
+  {
+    name: "pidgeotto",
+    height: 1.1,
+    types: ["flying", "normal"],
+    typeWeakness: ["electric", "ice", "rock"]
+  },
+  {
+    name: "pidgeot",
+    height: 1.5,
+    types: ["flying", "normal"],
+    typeWeakness: ["electric", "ice", "rock"]
+  },
+  {
+    name: "rattata",
+    height: 0.3,
+    types: ["normal"],
+    typeWeakness: ["fighting"]
+  },
+  {
+    name: "raticate",
+    height: 0.7,
+    types: ["normal"],
+    typeWeakness: ["fighting"]
+  },
+  {
+    name: "spearow",
+    height: 0.3,
+    types: ["normal", "flying"],
+    typeWeakness: ["electric", "ice", "rock"]
+  },
+  {
+    name: "fearow",
+    height: 1.2,
+    types: ["normal", "flying"],
+    typeWeakness: ["electric", "ice", "rock"]
+  },
+  {
     name: "gastly",
     height: 1.3,
     types: ["ghost", "poison"],
@@ -87,16 +147,18 @@ let pokemonList = [
   {
     name: "gengar",
     height: 1.5,
-    type: ["ghost", "poison"],
+    types: ["ghost", "poison"],
     typeWeakness: ["dark", "ghost", "ground", "psychic"]
   },
   {
     name: "snorlax",
     height: 2.1,
-    type: "normal",
+    types: ["normal"],
     typeWeakness: ["fighting"]
   }
 ];
+
+
 
 // let text = "";
 // let i = 0;
@@ -113,11 +175,18 @@ let pokemonList = [
 // }
 // document.write(text);
 
-for (let i = 0; i < pokemonList.length; i++){
-  if (pokemonList[i].height > 2.0) {
-  document.write(pokemonList[i].name + ", height: " + pokemonList[i].height + "m." + " Wow, this pokemon is huge!" + '<br/>');
+// for (let i = 0; i < pokemonList.length; i++){
+//  if (pokemonList[i].height > 2.0) {
+//  document.write(pokemonList[i].name + ", height: " + pokemonList[i].height + "m." + " Wow, this pokemon is huge!" + '<br/>');
+//  }
+//  else {
+//    document.write(pokemonList[i].name + ", height: " + pokemonList[i].height + "m." + '<br/>');
+//  }
+//}
+ // this function will call the pokemonList Array and display it's objects and their arrays
+function displayPokemonArray(list) {
+  for (let i = 0; i < list.length; i++){
+    document.write('<p>' + list[i].name + '<br/>' + " height: " + list[i].height + "m" + '<br/>' + "type(s): " + list[i].types.join(", ") + '<br/>' + "weak to: " + list[i].typeWeakness.join(", ") + '<p/>');
   }
-  else {
-    document.write(pokemonList[i].name + ", height: " + pokemonList[i].height + "m." + '<br/>');
-  }
-}
+ }
+displayPokemonArray(pokemonList);
