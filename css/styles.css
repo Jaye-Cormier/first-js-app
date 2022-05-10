@@ -17,3 +17,22 @@ h1 {
   text-align: center;
   color: red;
 }
+
+.button-class {
+  background-color: black;
+  color: white;
+  font-family: inherit;
+  display: inline-block;
+  border: 2px solid red;
+  border-radius: 3px;
+  padding: 12 px 24px;
+  margin: 4px 2px;
+  text-align: center;
+  text-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pokemon-list {
+  list-style-type: none;
+}
