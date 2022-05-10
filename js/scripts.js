@@ -1,6 +1,6 @@
 // List of Kanto region pokemon
 let pokemonRepository = (function() {
-  
+
 let pokemonList = [
   {
     name: "bulbasaur",
@@ -169,24 +169,41 @@ function getAll(){
   function add (pokemon){
     pokemonList.push(pokemon);
   }
-
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listPokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+    button.addEventListener('click', function() {
+      showDetails(pokemon);
+    });
+  }
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
   return {
     getAll: getAll,
-    add: add
+    add: add,
+    addListItem, addListItem
+    }
+  })();
+
+  console.log(pokemonRepository.getAll());
+  pokemonRepository.add({
+    name: "eevee",
+    height: 0.3,
+    types: ["normal"],
+    typeWeakness: ["fighting"]
+  });
+
+
+
+  function runPokemonList(pokemon) {
+    document.write('<p>' + pokemon.name + '<br/>' + " height: " + pokemon.height + "m" + '<br/>' + "type(s): " + pokemon.types.join(", ") + '<br/>' + "weak to: " + pokemon.typeWeakness.join(", ") + '<p/>');
   }
-  })()
-
-console.log(pokemonRepository.getAll())
-pokemonRepository.add({
-  name: "eevee",
-  height: 0.3 ,
-  types: ["normal"],
-  typeWeakness: ["fighting"]
-})
-
-
-
-function runPokemonList(pokemon) {
-  document.write('<p>' + pokemon.name + '<br/>' + " height: " + pokemon.height + "m" + '<br/>' + "type(s): " + pokemon.types.join(", ") + '<br/>' + "weak to: " + pokemon.typeWeakness.join(", ") + '<p/>');
-}
-pokemonRepository.getAll().forEach(runPokemonList);
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
