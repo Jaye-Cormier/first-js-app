@@ -25,7 +25,7 @@ function showModal(pokemon) {
 
   let pokemonHeight = document.createElement('p');
   pokemonHeight.classList.add('pokemon-height');
-  pokemonHeight.innerText = "Height: " + pokemon.height;
+  pokemonHeight.innerText = 'Height: ' + pokemon.height;
 
   let imageContainer = document.createElement('div');
   imageContainer.classList.add('img-container', 'grid__item');
@@ -87,7 +87,7 @@ function addListItem(pokemon) {
   let listPokemon = document.createElement('li');
   let button = document.createElement('button');
   button.innerText = pokemon.name.toUpperCase();
-  button.classList.add("button-class");
+  button.classList.add('button-class');
   listPokemon.appendChild(button);
   pokemonList.appendChild(listPokemon);
   button.addEventListener('click', function() {
