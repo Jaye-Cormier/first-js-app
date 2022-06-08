@@ -47,7 +47,6 @@ function showModal(pokemon) {
   modalBody.append(imageElementShiny);
 }
 
-
   function getAll(){
   return pokemonList;
 }
@@ -134,8 +133,6 @@ return {
 })();
 
 console.log(pokemonRepository.getAll());
-
-
 
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
